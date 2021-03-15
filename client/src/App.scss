@@ -1,0 +1,11 @@
+@import "~@bcgov/bootstrap-theme/dist/scss/bootstrap-theme";
+
+#root {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+}
+
+.react-datepicker-wrapper {
+    display: block;
+}
