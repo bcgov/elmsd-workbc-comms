@@ -13,6 +13,7 @@ const initialValues = {
         {
             topicHeading: '',
             topicContent: '',
+            topicLink: '',
         }
     ]
 }
@@ -163,6 +164,20 @@ const ComposeEmail = () => (
                                                         />
                                                     </div>
                                                     <div className="form-group">
+                                                        <label className="col-form-label control-label" htmlFor={`emailTopics.${index}.email`}>Topic Link</label>
+                                                        <Field
+                                                            name={`emailTopics.${index}.topicLink`}
+                                                            placeholder="Some text"
+                                                            type="email"
+                                                            className="form-control"
+                                                        />
+                                                        <ErrorMessage
+                                                            name={`emailTopics.${index}.topicLink`}
+                                                            component="div"
+                                                            className="field-error"
+                                                        />
+                                                    </div>
+                                                    <div className="form-group">
                                                         <button
                                                             type="button"
                                                             className="btn btn-secondary"
@@ -177,7 +192,7 @@ const ComposeEmail = () => (
                                         <button
                                             type="button"
                                             className="btn btn-primary"
-                                            onClick={() => push({ topicHeading: '', topicContent: '' })}
+                                            onClick={() => push({ topicHeading: '', topicContent: '', topicLink: '' })}
                                         >
                                             Add Topic
                                         </button>

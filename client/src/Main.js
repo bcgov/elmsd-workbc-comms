@@ -12,7 +12,6 @@ function Main() {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <PrivateRoute component={ComposeEmail} roles={['comms']} path="/sendEmail"   />
-                    <Route path="/fff" component={ComposeEmail} />
                 </Switch>
             </Router>
         </main>
