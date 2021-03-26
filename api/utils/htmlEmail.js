@@ -33,6 +33,7 @@ module.exports = function (title, topics, preAmble){
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet" type="text/css" />
+	<link href="https://use.typekit.net/xif0nlk.css" rel="stylesheet">
 	<!--<![endif]-->
 	<style type="text/css">
 		body {
@@ -210,15 +211,15 @@ module.exports = function (title, topics, preAmble){
 	</style>
 </head>
 
-<body class="clean-body" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #fff2e7;">
+<body class="clean-body" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #F2F2F2;">
 	<!--[if IE]><div class="ie-browser"><![endif]-->
-	<table bgcolor="#fff2e7" cellpadding="0" cellspacing="0" class="nl-container" role="presentation"
-		style="table-layout: fixed; vertical-align: top; min-width: 320px; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff2e7; width: 100%;"
+	<table bgcolor="#F2F2F2" cellpadding="0" cellspacing="0" class="nl-container" role="presentation"
+		style="table-layout: fixed; vertical-align: top; min-width: 320px; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F2F2F2; width: 100%;"
 		valign="top" width="100%">
 		<tbody>
 			<tr style="vertical-align: top;" valign="top">
 				<td style="word-break: break-word; vertical-align: top;" valign="top">
-					<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#fff2e7"><![endif]-->
+					<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#F2F2F2"><![endif]-->
 					<div style="background-color:transparent;">
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;">
@@ -241,60 +242,9 @@ module.exports = function (title, topics, preAmble){
 														style="word-break: break-word; vertical-align: top; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: center; width: 100%;"
 														valign="top" width="100%">
 														<h1
-															style="color:#8d9240;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:48px;font-weight:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
-															<strong>WorkBC This Week</strong><br /></h1>
-													</td>
-												</tr>
-											</table>
-											<!--[if (!mso)&(!IE)]><!-->
-										</div>
-										<!--<![endif]-->
-									</div>
-								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-							</div>
-						</div>
-					</div>
-					<div style="background-color:transparent;">
-						<div class="block-grid"
-							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
-							<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:#ffffff"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#ffffff;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:10px; padding-bottom:10px;"><![endif]-->
-								<div class="col num12"
-									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
-									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
-										<div
-											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:10px; padding-bottom:10px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
-											<table border="0" cellpadding="0" cellspacing="0" role="presentation"
-												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-												valign="top" width="100%">
-												<tr style="vertical-align: top;" valign="top">
-													<td align="center"
-														style="word-break: break-word; vertical-align: top; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; text-align: center; font-size: 0px;"
-														valign="top">
-														<div class="menu-links">
-															<!--[if mso]>
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center">
-<tr>
-<td style="padding-top:5px;padding-right:25px;padding-bottom:5px;padding-left:25px">
-<![endif]-->
-`
-        if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0){
-            topics.forEach(e => {
-                html += /*html*/ `
-                <a href="https://www.workbc.ca" style="padding-top:5px;padding-bottom:5px;padding-left:25px;padding-right:25px;display:inline;color:#0068A5;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:14px;text-decoration:none;letter-spacing:undefined;">${e.topicHeading}</a>
-                <!--[if mso]></td><td style="padding-top:5px;padding-right:25px;padding-bottom:5px;padding-left:25px"><![endif]-->
-                `               
-            })
-
-        }
-        html += /*html*/`
-
-														</div>
+															style="color:#234075;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:48px;font-weight:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
+															<img src="${clientURL}workbc-header-logo.svg" width="350px"/><br />
+														</h1>
 													</td>
 												</tr>
 											</table>
@@ -312,7 +262,7 @@ module.exports = function (title, topics, preAmble){
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;">
 							<div
-								style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;background-image:url('https://previews.123rf.com/images/memedozaslan/memedozaslan1905/memedozaslan190500036/126509484-different-thinking-concept-red-paper-plane-leaving-the-group.jpg');background-position:top left;background-repeat:no-repeat; background-size: cover">
+								style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;background-image:url('${clientURL}bg.jpeg');background-position:top left;background-repeat:no-repeat; background-size: cover">
 								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
 								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:transparent;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
 								<div class="col num12"
@@ -332,13 +282,13 @@ module.exports = function (title, topics, preAmble){
 															style="word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px;"
 															valign="top">
 															<table align="center" border="0" cellpadding="0"
-																cellspacing="0" class="divider_content" height="225"
+																cellspacing="0" class="divider_content" height="25"
 																role="presentation"
-																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 0px solid transparent; height: 225px; width: 100%;"
+																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 0px solid transparent; height: 25px; width: 100%;"
 																valign="top" width="100%">
 																<tbody>
 																	<tr style="vertical-align: top;" valign="top">
-																		<td height="225"
+																		<td height="25"
 																			style="word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
 																			valign="top"><span></span></td>
 																	</tr>
@@ -346,19 +296,23 @@ module.exports = function (title, topics, preAmble){
 															</table>
 														</td>
 													</tr>
+													
 												</tbody>
 											</table>
 											<div align="center" class="button-container"
 												style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-												<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:61.5pt;width:457.5pt;v-text-anchor:middle;" arcsize="5%" stroke="false" fillcolor="#8d9240"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#fff2e7; font-family:Georgia, serif; font-size:46px"><![endif]-->
+												<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:61.5pt;width:457.5pt;v-text-anchor:middle;" arcsize="5%" stroke="false" fillcolor="#8d9240"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#F2F2F2; font-family:Georgia, serif; font-size:46px"><![endif]-->
 												<div
-													style="text-decoration:none;display:inline-block;color:#fff2e7;background-color:#8d9240;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;width:auto; width:auto;;border-top:1px solid #8d9240;border-right:1px solid #8d9240;border-bottom:1px solid #8d9240;border-left:1px solid #8d9240;padding-top:0px;padding-bottom:0px;font-family:'Playfair Display', Georgia, serif;text-align:center;mso-border-alt:none;word-break:keep-all;">
+													style="text-decoration:none;display:inline-block;color:#F2F2F2;background-color:#234075;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;width:auto; width:auto;;border-top:1px solid #234075;border-right:1px solid #234075;border-bottom:1px solid #234075;border-left:1px solid #234075;padding-top:0px;padding-bottom:0px;font-family:'Playfair Display', Georgia, serif;text-align:center;mso-border-alt:none;word-break:keep-all;">
 													<span
 														style="padding-left:30px;padding-right:30px;font-size:46px;display:inline-block;letter-spacing:2px;"><span
 															style="font-size: 16px; line-height: 1.8; word-break: break-word; font-family: 'Playfair Display', Georgia, serif; mso-line-height-alt: 29px;"><strong><span
 																	data-mce-style="font-size: 46px; line-height: 82px;"
-																	style="font-size: 46px; line-height: 82px;">WorkBC
-																	is here.</span></strong></span></span></div>
+																	style="font-size: 46px; line-height: 82px;"><span
+																		style="color:#ffffff; font-family: adobe-garamond-pro; font-weight: 400;font-style: normal;">Work</span><span
+																		style="color: #fdb915; font-family: adobe-garamond-pro; font-weight: 400;font-style: normal;">BC</span> This
+																	Week</span></strong></span></span>
+												</div>
 												<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
 											</div>
 											<table cellpadding="0" cellspacing="0" role="presentation"
@@ -369,8 +323,9 @@ module.exports = function (title, topics, preAmble){
 														style="word-break: break-word; vertical-align: top; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: center; width: 100%;"
 														valign="top" width="100%">
 														<h2
-															style="color:#686c27;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:34px;font-weight:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
-															<strong>Here are this weeks comms!</strong><br /></h2>
+															style="color:#ffffff;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:34px;font-weight:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
+															<strong>${title}</strong><br />
+														</h2>
 													</td>
 												</tr>
 											</table>
@@ -410,6 +365,7 @@ module.exports = function (title, topics, preAmble){
 							</div>
 						</div>
 					</div>
+
 					<div style="background-color:transparent;">
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
@@ -430,7 +386,28 @@ module.exports = function (title, topics, preAmble){
 													style="line-height: 1.5; font-size: 12px; color: #393d47; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 18px;">
 													<p
 														style="font-size: 16px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
-														<span style="font-size: 16px;">This week on WorkBC...</span></p>
+														<span style="font-size: 16px;">This week on WorkBC...</span>
+													</p>
+													<ul
+														style="font-size: 16px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 5px;">
+                                                        `
+                                                        if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0){
+                                                            topics.forEach(e => {
+                                                                html += /*html*/
+                                                                `
+                                                                <li>${e.topicHeading}</li>
+                                                                `
+															})
+                                                        }
+                                                        
+														
+            html += /*html*/`
+													</ul>
+													<p
+														style="font-size: 16px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
+														<span style="font-size: 16px;">Something below table of
+															contents</span>
+													</p>
 												</div>
 											</div>
 											<!--[if mso]></td></tr></table><![endif]-->
@@ -445,6 +422,7 @@ module.exports = function (title, topics, preAmble){
 						</div>
 					</div>
                     `
+                    //adding actual topics
                     if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0){
                         topics.forEach(e => {
                             html += /*html*/ `
@@ -474,7 +452,7 @@ module.exports = function (title, topics, preAmble){
 															<table align="center" border="0" cellpadding="0"
 																cellspacing="0" class="divider_content"
 																role="presentation"
-																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px solid #8D9240; width: 90%;"
+																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px solid #e3a82b; width: 90%;"
 																valign="top" width="90%">
 																<tbody>
 																	<tr style="vertical-align: top;" valign="top">
@@ -540,7 +518,7 @@ module.exports = function (title, topics, preAmble){
 												style="padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:0px;">
 												<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px" align="left"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.example.com" style="height:34.5pt;width:147.75pt;v-text-anchor:middle;" arcsize="9%" strokeweight="1.5pt" strokecolor="#686C27" fill="false"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#686c27; font-family:Arial, sans-serif; font-size:16px"><![endif]--><a
 													href="https://workbc.ca"
-													style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #686c27; background-color: transparent; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 2px solid #686C27; border-right: 2px solid #686C27; border-bottom: 2px solid #686C27; border-left: 2px solid #686C27; padding-top: 5px; padding-bottom: 5px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
+													style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #234075; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 2px solid #234075; border-right: 2px solid #234075; border-bottom: 2px solid #234075; border-left: 2px solid #234075; padding-top: 5px; padding-bottom: 5px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
 													target="_blank"><span
 														style="padding-left:25px;padding-right:25px;font-size:16px;display:inline-block;letter-spacing:undefined;"><span
 															style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>View
@@ -581,7 +559,7 @@ module.exports = function (title, topics, preAmble){
 															<table align="center" border="0" cellpadding="0"
 																cellspacing="0" class="divider_content"
 																role="presentation"
-																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px solid #8D9240; width: 90%;"
+																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px solid #e3a82b; width: 90%;"
 																valign="top" width="90%">
 																<tbody>
 																	<tr style="vertical-align: top;" valign="top">
@@ -646,7 +624,7 @@ module.exports = function (title, topics, preAmble){
 																				href="https://www.facebook.com/"
 																				target="_blank"><img alt="Facebook"
 																					height="32"
-																					src="images/facebook2x.png"
+																					src="${clientURL}facebook2x.png"
 																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
 																					title="facebook" width="32" /></a>
 																		</td>
@@ -655,7 +633,7 @@ module.exports = function (title, topics, preAmble){
 																				href="https://www.twitter.com/"
 																				target="_blank"><img alt="Twitter"
 																					height="32"
-																					src="images/twitter2x.png"
+																					src="${clientURL}twitter2x.png"
 																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
 																					title="twitter" width="32" /></a>
 																		</td>
@@ -664,7 +642,7 @@ module.exports = function (title, topics, preAmble){
 																				href="https://www.linkedin.com/"
 																				target="_blank"><img alt="Linkedin"
 																					height="32"
-																					src="images/linkedin2x.png"
+																					src="${clientURL}linkedin2x.png"
 																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
 																					title="linkedin" width="32" /></a>
 																		</td>
@@ -673,7 +651,7 @@ module.exports = function (title, topics, preAmble){
 																				href="https://www.instagram.com/"
 																				target="_blank"><img alt="Instagram"
 																					height="32"
-																					src="images/instagram2x.png"
+																					src="${clientURL}instagram2x.png"
 																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
 																					title="instagram" width="32" /></a>
 																		</td>
@@ -819,14 +797,30 @@ module.exports = function (title, topics, preAmble){
 											<table cellpadding="0" cellspacing="0" role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
 												valign="top" width="100%">
-												<tr style="vertical-align: top;" valign="top">
-													<td align="center"
-														style="word-break: break-word; vertical-align: top; padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; text-align: center;"
-														valign="top">
-														<!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-														<!--[if !vml]><!-->
-													</td>
-												</tr>
+												<tbody>
+													<tr style="vertical-align: top;" valign="top">
+														<td align="center"
+															style="word-break: break-word; vertical-align: top; padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; text-align: center;"
+															valign="top">
+															<!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
+															<!--[if !vml]><!-->
+															<table cellpadding="0" cellspacing="0" class="icons-inner"
+																role="presentation"
+																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;"
+																valign="top">
+																<!--<![endif]-->
+																<tbody>
+																	<tr style="vertical-align: top;" valign="top">
+																		<td align="center"
+																			style="word-break: break-word; vertical-align: top; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 6px;"
+																			valign="top"><img src="${clientURL}canada-bc-tagline.png" width="400px" />
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+												</tbody>
 											</table>
 											<!--[if (!mso)&(!IE)]><!-->
 										</div>

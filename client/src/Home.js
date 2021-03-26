@@ -23,7 +23,11 @@ function Home() {
                                 :
                                 <div>
                                     <p>Welcome {keycloak.tokenParsed.given_name}</p>
+                                    {keycloak.hasResourceRole("comms") ?
                                     <a href="/sendEmail" className="btn btn-lg btn-dark">Send Email</a>
+                                    :
+                                        <p>You don't have any options. Unauthorized</p>
+                                    }
                                 </div>
                             }
                         </div>

@@ -152,7 +152,6 @@ const ComposeEmail = () => (
                                                         <Field
                                                             name={`emailTopics.${index}.topicContent`}
                                                             placeholder="Some text"
-                                                            type="email"
                                                             className="form-control"
                                                             as="textarea"
                                                             rows="4"
@@ -168,7 +167,6 @@ const ComposeEmail = () => (
                                                         <Field
                                                             name={`emailTopics.${index}.topicLink`}
                                                             placeholder="Some text"
-                                                            type="email"
                                                             className="form-control"
                                                         />
                                                         <ErrorMessage
