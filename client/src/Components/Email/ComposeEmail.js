@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import React from 'react'
+import { withRouter, useHistory } from 'react-router-dom'
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik'
 import { FORM_URL } from '../../constants/form'
+import { EmailValidationSchema } from './EmailValidationSchema'
+import { useKeycloak } from '@react-keycloak/web'
 
 const initialValues = {
     emailTo: '',
@@ -18,9 +20,12 @@ const initialValues = {
     ]
 }
 
-const ComposeEmail = () => (
+
+
+function ComposeEmail() {
+    const history = useHistory()
+    return (
     <div className="container">
-        {console.log("here")}
         <div className="row">
             <div className="col-md-12">
                 <h1>WorkBC This Week Email Sender</h1>
@@ -45,10 +50,12 @@ const ComposeEmail = () => (
                                 }
                                 else {
                                     setSubmitting(false)
+                                    history.push('/successEmail', values)
                                 }
                             }
                         )
                     }}
+                    validationSchema={EmailValidationSchema}
                 >
                     {({ values, isSubmitting }) => (
                         <Form>
@@ -225,5 +232,6 @@ const ComposeEmail = () => (
         </div>
     </div>
 )
+                                        }
 
-export default ComposeEmail
+export default withRouter(ComposeEmail)

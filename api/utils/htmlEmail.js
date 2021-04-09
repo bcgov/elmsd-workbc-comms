@@ -513,20 +513,26 @@ module.exports = function (title, topics, preAmble){
                                                     </p>
 												</div>
 											</div>
-											<!--[if mso]></td></tr></table><![endif]-->
-											<div align="left" class="button-container"
-												style="padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:0px;">
-												<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px" align="left"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.example.com" style="height:34.5pt;width:147.75pt;v-text-anchor:middle;" arcsize="9%" strokeweight="1.5pt" strokecolor="#686C27" fill="false"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#686c27; font-family:Arial, sans-serif; font-size:16px"><![endif]--><a
-													href="https://workbc.ca"
-													style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #234075; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 2px solid #234075; border-right: 2px solid #234075; border-bottom: 2px solid #234075; border-left: 2px solid #234075; padding-top: 5px; padding-bottom: 5px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
-													target="_blank"><span
-														style="padding-left:25px;padding-right:25px;font-size:16px;display:inline-block;letter-spacing:undefined;"><span
-															style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>View
-																More</strong></span></span></a>
-												<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
-											</div>
-											<!--[if (!mso)&(!IE)]><!-->
+											`
+											if (e.topicLink !== ""){
+												html += /*html*/`
+												<!--[if mso]></td></tr></table><![endif]-->
+												<div align="left" class="button-container"
+													style="padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:0px;">
+													<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px" align="left"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.example.com" style="height:34.5pt;width:147.75pt;v-text-anchor:middle;" arcsize="9%" strokeweight="1.5pt" strokecolor="#686C27" fill="false"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#686c27; font-family:Arial, sans-serif; font-size:16px"><![endif]--><a
+														href="${e.topicLink}"
+														style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #234075; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 2px solid #234075; border-right: 2px solid #234075; border-bottom: 2px solid #234075; border-left: 2px solid #234075; padding-top: 5px; padding-bottom: 5px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
+														target="_blank"><span
+															style="padding-left:25px;padding-right:25px;font-size:16px;display:inline-block;letter-spacing:undefined;"><span
+																style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>View
+																	More</strong></span></span></a>
+													<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+												</div>
+												`
+											}
+											html += /*html*/`
 										</div>
+										<!--[if (!mso)&(!IE)]><!-->
 										<!--<![endif]-->
 									</div>
 								</div>

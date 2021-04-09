@@ -32,12 +32,6 @@ function App() {
       <ReactKeycloakProvider
         authClient={keycloak}
         initConfig={keycloakProviderInitConfig}
-        onEvent={(event, error) => {
-          console.log('onKeycloakEvent', event, error)
-        }}
-        onTokens={(tokens) => {
-          console.log('onKeycloakTokens', tokens)
-        }}
       >
         <Router>
           <Header />

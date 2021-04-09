@@ -1,5 +1,6 @@
 import React from 'react'
 import { useKeycloak } from '@react-keycloak/web'
+import AuthorizedFunction from './utils/AuthorizedFunction'
 
 function Home() {
     const { keycloak, initialized } = useKeycloak()
@@ -12,7 +13,6 @@ function Home() {
             </div>
             {initialized ? (
                 <div>
-                    {console.log(keycloak)}
                     <div className="row">
                         <div className="col-md-12">
                             {!keycloak.authenticated ? 
@@ -35,8 +35,8 @@ function Home() {
                 </div>
             )
                 :
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
+                <div className="spinner-border" role="status">
+                    <span className="sr-only">Loading...</span>
                 </div>
             }
         </div>
