@@ -33,7 +33,7 @@ async function sendEmails(values) {
           cc: values.emailCC,
           bcc: values.emailBCC,
           subject: values.emailSubject, // Subject line
-          html: generateHTMLEmail(values.emailHeading, values.emailTopics,"") // html body
+          html: generateHTMLEmail(values.emailHeading, values.emailTopics,values.aboveTOC,values.belowTOC) // html body
         };
         /*
         let message3 = {

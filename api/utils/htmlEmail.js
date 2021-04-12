@@ -1,6 +1,6 @@
 var clientURL = process.env.CLIENTURL || process.env.OPENSHIFT_NODEJS_CLIENTURL || "http://localhost:3000"
 
-module.exports = function (title, topics, preAmble){
+module.exports = function (title, topics, aboveTOC, belowTOC){
     //console.log(topics)
     var html = /*html*/`
     <!DOCTYPE html
@@ -386,7 +386,7 @@ module.exports = function (title, topics, preAmble){
 													style="line-height: 1.5; font-size: 12px; color: #393d47; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 18px;">
 													<p
 														style="font-size: 16px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
-														<span style="font-size: 16px;">This week on WorkBC...</span>
+														<span style="font-size: 16px;">${aboveTOC}</span>
 													</p>
 													<ul
 														style="font-size: 16px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 5px;">
@@ -405,8 +405,7 @@ module.exports = function (title, topics, preAmble){
 													</ul>
 													<p
 														style="font-size: 16px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
-														<span style="font-size: 16px;">Something below table of
-															contents</span>
+														<span style="font-size: 16px;">${belowTOC}</span>
 													</p>
 												</div>
 											</div>

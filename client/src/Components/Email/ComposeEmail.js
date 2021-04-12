@@ -11,6 +11,8 @@ const initialValues = {
     emailBCC: '',
     emailSubject: '',
     emailHeading: '',
+    aboveTOC: '',
+    belowTOC: '',
     emailTopics: [
         {
             topicHeading: '',
@@ -131,6 +133,34 @@ function ComposeEmail() {
                                             />
                                             <ErrorMessage
                                                 name="emailHeading"
+                                                component="div"
+                                                className="field-error"
+                                            />
+                                        </div>
+                                        <div className="form-group row">
+                                            <label className="col-form-label control-label col-sm-2" htmlFor="aboveTOC">Above TOC:</label>
+                                            <Field
+                                                name="aboveTOC"
+                                                placeholder="WorkBC This Week"
+                                                type="text"
+                                                className="col-sm-10 form-control"
+                                            />
+                                            <ErrorMessage
+                                                name="aboveTOC"
+                                                component="div"
+                                                className="field-error"
+                                            />
+                                        </div>
+                                        <div className="form-group row">
+                                            <label className="col-form-label control-label col-sm-2" htmlFor="belowTOC">Below TOC:</label>
+                                            <Field
+                                                name="belowTOC"
+                                                placeholder="WorkBC This Week"
+                                                type="text"
+                                                className="col-sm-10 form-control"
+                                            />
+                                            <ErrorMessage
+                                                name="belowTOC"
                                                 component="div"
                                                 className="field-error"
                                             />
