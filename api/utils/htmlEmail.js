@@ -510,10 +510,11 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
                                                     </p>
 												</div>
 											</div>
+											<!--[if mso]></td></tr></table><![endif]-->
 											`
 											if (e.topicLink !== "") {
 												html += /*html*/`
-												<!--[if mso]></td></tr></table><![endif]-->
+												
 												<div align="left" class="button-container"
 													style="padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:0px;">
 													<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px" align="left"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${e.topicLink}" style="height:34.5pt;width:147.75pt;v-text-anchor:middle;" arcsize="9%" strokeweight="1.5pt" strokecolor="#234075" fill="false"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><![endif]--><a
@@ -528,11 +529,13 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 												`
 											}
 										html += /*html*/`
-										</div>
 										<!--[if (!mso)&(!IE)]><!-->
+										</div>
 										<!--<![endif]-->
 									</div>
 								</div>
+								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+								<!-- picture to go here -->
 							</div>
 						</div>
 					</div>
@@ -675,7 +678,7 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 																		valign="top">
 																		<td style="word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 10px; padding-left: 10px;"
 																			valign="top"><img alt="Canada Tagline"
-																					height="75"
+																					height="78"
 																					width="285"
 																					src="${clientURL}canada-bc-tagline.png"
 																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
