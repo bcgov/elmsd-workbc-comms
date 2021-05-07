@@ -324,7 +324,7 @@ function ComposeEmail() {
                                         <button
                                             type="button"
                                             className="btn btn-primary"
-                                            onClick={() => push({ topicHeading: '', topicContent: EditorState.createEmpty(), topicLink: '' })}
+                                            onClick={() => push({ topicHeading: '', topicContent: EditorState.createEmpty(), topicLink: '', hasImage: false, topicImage: '' })}
                                         >
                                             Add Topic
                                         </button>

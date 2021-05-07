@@ -11,11 +11,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image1"
+                            id={`${topic}-image1`}
                             name={topic}
                             value="image1.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image1">
+                        <label className="image-select-label" htmlFor={`${topic}-image1`}>
                             <img src={`${FORM_URL.imageLinks}/image1.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
@@ -25,11 +25,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image2"
+                            id={`${topic}-image2`}
                             name={topic}
                             value="image2.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image2">
+                        <label className="image-select-label" htmlFor={`${topic}-image2`}>
                             <img src={`${FORM_URL.imageLinks}/image2.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
@@ -39,11 +39,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image3"
+                            id={`${topic}-image3`}
                             name={topic}
                             value="image3.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image3">
+                        <label className="image-select-label" htmlFor={`${topic}-image3`}>
                             <img src={`${FORM_URL.imageLinks}/image3.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
@@ -53,11 +53,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image4"
+                            id={`${topic}-image4`}
                             name={topic}
                             value="image4.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image4">
+                        <label className="image-select-label" htmlFor={`${topic}-image4`}>
                             <img src={`${FORM_URL.imageLinks}/image4.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
@@ -69,11 +69,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image5"
+                            id={`${topic}-image5`}
                             name={topic}
                             value="image5.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image5">
+                        <label className="image-select-label" htmlFor={`${topic}-image5`}>
                             <img src={`${FORM_URL.imageLinks}/image5.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
@@ -83,11 +83,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image6"
+                            id={`${topic}-image6`}
                             name={topic}
                             value="image6.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image6">
+                        <label className="image-select-label" htmlFor={`${topic}-image6`}>
                             <img src={`${FORM_URL.imageLinks}/image6.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
@@ -97,11 +97,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image7"
+                            id={`${topic}-image7`}
                             name={topic}
                             value="image7.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image7">
+                        <label className="image-select-label" htmlFor={`${topic}-image7`}>
                             <img src={`${FORM_URL.imageLinks}/image7.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
@@ -111,11 +111,11 @@ function ImageSelector(topic) {
                         <Field
                             type="radio"
                             class="image-select-input"
-                            id="image8"
+                            id={`${topic}-image8`}
                             name={topic}
                             value="image8.jpeg"
                         />
-                        <label className="image-select-label" htmlFor="image8">
+                        <label className="image-select-label" htmlFor={`${topic}-image8`}>
                             <img src={`${FORM_URL.imageLinks}/image8.jpeg`} alt="#" className="img-fluid" width="250px" height="250px"></img>
                         </label>
                     </div>
