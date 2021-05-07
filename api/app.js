@@ -16,6 +16,7 @@ const corsOptions = {
 };
 
 var formRouter = require('./routes/form')
+var previewRouter = require('./routes/preview')
 
 
 var app = express();
@@ -29,5 +30,6 @@ app.use(helmet());
 
 
 app.use('/api/form', formRouter)
+app.use('/api/preview',previewRouter)
 
 module.exports = app;

@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik'
 import { FORM_URL } from '../../constants/form'
 import { EmailValidationSchema } from './EmailValidationSchema'
 import { useKeycloak } from '@react-keycloak/web'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import { EditorState } from 'draft-js';
+import {RichEditor} from '../../utils/RichEditor'
+import {stateToHTML} from 'draft-js-export-html'
+import ImageSelector from './ImageSelector'
 
 const initialValues = {
     emailTo: '',
@@ -16,16 +22,62 @@ const initialValues = {
     emailTopics: [
         {
             topicHeading: '',
-            topicContent: '',
+            topicContent: EditorState.createEmpty(),
             topicLink: '',
+            hasImage: false,
+            topicImage: '',
         }
     ]
 }
 
 
 
+
+
 function ComposeEmail() {
     const history = useHistory()
+    const [show, setShow] = useState(false);
+    const [fetchPreview, setFetchPreview] = useState(false);
+    const handleClose = () => setShow(false);
+    const [prevEmail, setPrevEmail] = useState({__html: ''})
+    const handleShow = () => setShow(true);
+
+    const getHtml = (values) => {
+        console.log(values)
+        if (show && !fetchPreview) {
+            setFetchPreview(true)
+            let vC = JSON.parse(JSON.stringify(values))
+            console.log(vC)
+            let eT = vC.emailTopics
+            eT.forEach((e, i) => {
+                e.topicContent = stateToHTML(values.emailTopics[i].topicContent.getCurrentContent())
+            })
+            console.log(eT)
+            console.log(values)
+            fetch("http://localhost:8000/api/preview", {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(vC),
+            })
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        console.log(result)
+                        setPrevEmail(result)
+                    },
+                    (error) => {
+                        console.log(error)
+                    }
+                )
+        } else if (!show){
+            setFetchPreview(false)
+        }
+    }
+
     return (
     <div className="container">
         <div className="row">
@@ -34,6 +86,18 @@ function ComposeEmail() {
                 <Formik
                     initialValues={initialValues}
                     onSubmit={(values, { resetForm, setErrors, setStatus, setSubmitting }) => {
+                        /*
+                        let eT = values.emailTopics
+                        eT.forEach(e => {
+                            e.topicContent = stateToHTML(e.topicContent.getCurrentContent())
+                        })
+                        console.log(eT)
+                        console.log(values.emailTopics)
+                        */
+                        //console.log(stateToHTML(values.emailTopics[0].topicContent.getCurrentContent()))
+                        setSubmitting(false)
+                        //console.log(JSON.stringify(values))
+                        
                         fetch(FORM_URL.mainForm, {
                             method: "POST",
                             credentials: 'include',
@@ -52,19 +116,18 @@ function ComposeEmail() {
                                 }
                                 else {
                                     setSubmitting(false)
-                                    history.push('/successEmail', values)
+                                    //history.push('/successEmail', values)
                                 }
                             }
                         )
                     }}
                     validationSchema={EmailValidationSchema}
                 >
-                    {({ values, isSubmitting }) => (
+                    {({ values, isSubmitting, setFieldValue, handleBlur, handleChange }) => (
                         <Form>
                             <FieldArray name="emailTopics">
-                                {({ insert, remove, push }) => (
+                                {({ insert, remove, push, }) => (
                                     <div>
-                                        {console.log(values)}
                                         <h2>Email Fields</h2>
                                         <div className="form-group row">
                                             <label className="col-form-label control-label col-sm-2" htmlFor="emailTo">To:</label>
@@ -141,7 +204,7 @@ function ComposeEmail() {
                                             <label className="col-form-label control-label col-sm-2" htmlFor="aboveTOC">Above TOC:</label>
                                             <Field
                                                 name="aboveTOC"
-                                                placeholder="WorkBC This Week"
+                                                placeholder="This week..."
                                                 type="text"
                                                 className="col-sm-10 form-control"
                                             />
@@ -155,7 +218,7 @@ function ComposeEmail() {
                                             <label className="col-form-label control-label col-sm-2" htmlFor="belowTOC">Below TOC:</label>
                                             <Field
                                                 name="belowTOC"
-                                                placeholder="WorkBC This Week"
+                                                placeholder="Something extra..."
                                                 type="text"
                                                 className="col-sm-10 form-control"
                                             />
@@ -169,9 +232,10 @@ function ComposeEmail() {
                                         {values.emailTopics.length > 0 &&
                                             values.emailTopics.map((emailTopics, index) => (
                                                 <div key={index}>
+                                                    {console.log(emailTopics)}
                                                     <hr></hr>
                                                     <div className="form-group">
-                                                        <label className="col-form-label control-label" htmlFor={`emailTopics.${index}.name`}>Topic Heading</label>
+                                                        <label className="col-form-label control-label" htmlFor={`emailTopics.${index}.topicHeading`}>Topic Heading</label>
                                                         <Field
                                                             name={`emailTopics.${index}.topicHeading`}
                                                             placeholder="Some topic"
@@ -185,13 +249,21 @@ function ComposeEmail() {
                                                         />
                                                     </div>
                                                     <div className="form-group">
-                                                        <label className="col-form-label control-label" htmlFor={`emailTopics.${index}.email`}>Topic Content</label>
+                                                        <label className="col-form-label control-label" htmlFor={`emailTopics.${index}.topicContent`}>Topic Content</label>
+                                                        {/*
                                                         <Field
                                                             name={`emailTopics.${index}.topicContent`}
                                                             placeholder="Some text"
                                                             className="form-control"
                                                             as="textarea"
                                                             rows="4"
+                                                        />
+                                                        */}
+                                                        <RichEditor
+                                                            editorState={emailTopics.topicContent}
+                                                            onChange={setFieldValue}
+                                                            onBlur={handleBlur}
+                                                            name={`emailTopics.${index}.topicContent`}
                                                         />
                                                         <ErrorMessage
                                                             name={`emailTopics.${index}.topicContent`}
@@ -200,7 +272,7 @@ function ComposeEmail() {
                                                         />
                                                     </div>
                                                     <div className="form-group">
-                                                        <label className="col-form-label control-label" htmlFor={`emailTopics.${index}.email`}>Topic Link</label>
+                                                        <label className="col-form-label control-label" htmlFor={`emailTopics.${index}.topicLink`}>Topic Link</label>
                                                         <Field
                                                             name={`emailTopics.${index}.topicLink`}
                                                             placeholder="Some text"
@@ -212,6 +284,31 @@ function ComposeEmail() {
                                                             className="field-error"
                                                         />
                                                     </div>
+                                                    <div className="form-group">
+                                                        <div className="form-check">
+                                                        <Field
+                                                            type="checkbox"
+                                                            name={`emailTopics.${index}.hasImage`}
+                                                            placeholder="Some text"
+                                                            className="form-check-input"
+                                                            onChange={e => {
+                                                                handleChange(e)
+                                                                setFieldValue(`emailTopics.${index}.topicImage`, "")
+                                                            }}
+                                                        />
+                                                        <label className="form-check-label control-label" htmlFor={`emailTopics.${index}.hasImage`}>Image?</label>
+                                                        <ErrorMessage
+                                                            name={`emailTopics.${index}.hasImage`}
+                                                            component="div"
+                                                            className="field-error"
+                                                        />
+                                                        </div>
+                                                    </div>
+                                                    {emailTopics.hasImage &&
+                                                    <div className="form-group">
+                                                        {ImageSelector(`emailTopics.${index}.topicImage`)}
+                                                    </div>
+                                                    }
                                                     <div className="form-group">
                                                         <button
                                                             type="button"
@@ -227,12 +324,36 @@ function ComposeEmail() {
                                         <button
                                             type="button"
                                             className="btn btn-primary"
-                                            onClick={() => push({ topicHeading: '', topicContent: '', topicLink: '' })}
+                                            onClick={() => push({ topicHeading: '', topicContent: EditorState.createEmpty(), topicLink: '' })}
                                         >
                                             Add Topic
                                         </button>
                                         <br></br>
                                         <br></br>
+                                        <Button variant="danger" onClick={handleShow}>
+                                            Preview
+                                        </Button>
+                                        <Modal 
+                                            show={show} 
+                                            onHide={handleClose} 
+                                            onEnter={getHtml(values)}
+                                            size="lg"
+                                        >
+                                            <Modal.Header closeButton>
+                                            <Modal.Title>Preview Email</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <div dangerouslySetInnerHTML={prevEmail}>
+                                                </div>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                            <Button variant="secondary" onClick={handleClose}>
+                                                Close
+                                            </Button>
+                                            </Modal.Footer>
+                                        </Modal>
+                                        <br></br>
+                                        <br></br>                                        
                                         <button
                                             className="btn btn-success btn-block"
                                             type="submit"

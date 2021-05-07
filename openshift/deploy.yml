@@ -12,14 +12,11 @@ objects:
   metadata:
     creationTimestamp: null
     name: ${NAME}-static${SUFFIX}
-  labels:
-    app: elmsd-workbc-comms
-    app.kubernetes.io/component: client
-    app.kubernetes.io/instance: elmsd-workbc-comms
-    app.kubernetes.io/name: nginx
-    app.kubernetes.io/part-of: elmsd-workbc-comms
-    app.openshift.io/runtime: nginx
-    app.openshift.io/runtime-version: '12'    
+    labels:
+      app: elmsd-workbc-comms
+      app.kubernetes.io/component: client
+      app.kubernetes.io/part-of: elmsd-workbc-comms
+      app.openshift.io/runtime: nginx  
   spec:
     replicas: 1
     selector:
@@ -126,18 +123,15 @@ objects:
   metadata:
     creationTimestamp: null
     name: ${NAME}-api${SUFFIX}
-  labels:
-    app: elmsd-workbc-comms
-    app.kubernetes.io/component: api
-    app.kubernetes.io/instance: elmsd-workbc-comms
-    app.kubernetes.io/name: nodejs
-    app.kubernetes.io/part-of: elmsd-workbc-comms
-    app.openshift.io/runtime: nodejs
-    app.openshift.io/runtime-version: '12'   
+    labels:
+      app: elmsd-workbc-comms
+      app.kubernetes.io/component: api
+      app.kubernetes.io/part-of: elmsd-workbc-comms
+      app.openshift.io/runtime: nodejs
   spec:
     replicas: 1
     selector:
-      deploymentconfig: ${NAME}${SUFFIX}
+      deploymentconfig: ${NAME}-api${SUFFIX}
     strategy:
       resources:
         requests:
@@ -148,10 +142,10 @@ objects:
       metadata:
         creationTimestamp: null
         labels:
-          deploymentconfig: ${NAME}${SUFFIX}
+          deploymentconfig: ${NAME}-api${SUFFIX}
       spec:
         containers:
-        - image: ${NAME}:${TAG}
+        - image: ${NAME}-api:${TAG}
           name: elmsd-workbc-comms-api
           ports:
           - containerPort: 8000
@@ -173,14 +167,14 @@ objects:
         - elmsd-workbc-comms-api
         from:
           kind: ImageStreamTag
-          name: ${NAME}:${TAG}
+          name: ${NAME}-api:${TAG}
           namespace: ${IMAGE_NAMESPACE}
       type: ImageChange
 - apiVersion: v1
   kind: Service
   metadata:
     creationTimestamp: null
-    name: ${NAME}${SUFFIX}
+    name: ${NAME}-api${SUFFIX}
   spec:
     ports:
     - name: api
@@ -188,7 +182,7 @@ objects:
       protocol: TCP
       targetPort: 8000
     selector:
-      deploymentconfig: ${NAME}${SUFFIX}
+      deploymentconfig: ${NAME}-api${SUFFIX}
 parameters:
 - description: A name used for all objects
   displayName: Name

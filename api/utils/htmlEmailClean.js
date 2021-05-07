@@ -1,10 +1,8 @@
-var {stateToHTML} = require('draft-js-export-html')
-
 var clientURL = process.env.CLIENTURL || process.env.OPENSHIFT_NODEJS_CLIENTURL || "http://localhost:3000"
 
-module.exports = function (title, topics, aboveTOC, belowTOC) {
-	//console.log(topics)
-	var html = /*html*/`
+module.exports = function (title, topics, aboveTOC, belowTOC){
+    //console.log(topics)
+    var html = /*html*/`
     <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -214,28 +212,26 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 </head>
 
 <body class="clean-body" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #F2F2F2;">
-	<!--[if IE]><div class="ie-browser"><![endif]-->
 	<table bgcolor="#F2F2F2" cellpadding="0" cellspacing="0" class="nl-container" role="presentation"
 		style="table-layout: fixed; vertical-align: top; min-width: 320px; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F2F2F2; width: 100%;"
 		valign="top" width="100%">
 		<tbody>
 			<tr style="vertical-align: top;" valign="top">
 				<td style="word-break: break-word; vertical-align: top;" valign="top">
-					<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#F2F2F2"><![endif]-->
+					
 					<div style="background-color:transparent;">
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;">
 							<div
 								style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:transparent;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:25px; padding-bottom:25px;"><![endif]-->
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:25px; padding-bottom:25px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
+											
 											<table cellpadding="0" cellspacing="0" role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
 												valign="top" width="100%">
@@ -245,18 +241,17 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 														valign="top" width="100%">
 														<h1
 															style="color:#234075;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:48px;font-weight:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
-															<img src="${clientURL}workbc-header-logo.png" height="40"/><br />
+															<img src="${clientURL}workbc-header-logo.svg" width="350px"/><br />
 														</h1>
 													</td>
 												</tr>
 											</table>
-											<!--[if (!mso)&(!IE)]><!-->
+
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+
 							</div>
 						</div>
 					</div>
@@ -265,15 +260,14 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;">
 							<div
 								style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;background-image:url('${clientURL}bg.jpeg');background-position:top left;background-repeat:no-repeat; background-size: cover">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#5bc2e7;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
+
 											<table border="0" cellpadding="0" cellspacing="0" class="divider"
 												role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
@@ -303,7 +297,7 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 											</table>
 											<div align="center" class="button-container"
 												style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-												<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:61.5pt;width:457.5pt;v-text-anchor:middle;" arcsize="5%" stroke="false" fillcolor="#234075"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#F2F2F2; font-family:Georgia, serif; font-size:46px"><![endif]-->
+
 												<div
 													style="text-decoration:none;display:inline-block;color:#F2F2F2;background-color:#234075;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;width:auto; width:auto;;border-top:1px solid #234075;border-right:1px solid #234075;border-bottom:1px solid #234075;border-left:1px solid #234075;padding-top:0px;padding-bottom:0px;font-family:'Playfair Display', Georgia, serif;text-align:center;mso-border-alt:none;word-break:keep-all;">
 													<span
@@ -315,7 +309,7 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 																		style="color: #fdb915; font-family: adobe-garamond-pro; font-weight: 400;font-style: normal;">BC</span> This
 																	Week</span></strong></span></span>
 												</div>
-												<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+
 											</div>
 											<table cellpadding="0" cellspacing="0" role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
@@ -357,13 +351,12 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 													</tr>
 												</tbody>
 											</table>
-											<!--[if (!mso)&(!IE)]><!-->
+
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+
 							</div>
 						</div>
 					</div>
@@ -372,16 +365,14 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
 							<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:#ffffff"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#ffffff;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:25px; padding-bottom:25px;"><![endif]-->
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:25px; padding-bottom:25px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
-											<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 20px; padding-left: 20px; padding-top: 15px; padding-bottom: 15px; font-family: Arial, sans-serif"><![endif]-->
+
 											<div
 												style="color:#393d47;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.5;padding-top:15px;padding-right:20px;padding-bottom:15px;padding-left:20px;">
 												<div class="txtTinyMce-wrapper"
@@ -393,15 +384,17 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 													<ul
 														style="font-size: 16px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 5px;">
                                                         `
-														if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0) {
-															topics.forEach(e => {
-																html += /*html*/
-																	`<li><a href="#t0">${e.topicHeading}</a></li>`
+                                                        if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0){
+                                                            topics.forEach((e,i) => {
+                                                                html += /*html*/
+                                                                `
+                                                                <li><a href="#topic${i}">${e.topicHeading}</a></li>
+                                                                `
 															})
-														}
-
-
-													html += /*html*/`
+                                                        }
+                                                        
+														
+            html += /*html*/`
 													</ul>
 													<p
 														style="font-size: 16px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
@@ -409,31 +402,33 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 													</p>
 												</div>
 											</div>
-											<!--[if mso]></td></tr></table><![endif]-->
-											<!--[if (!mso)&(!IE)]><!-->
+
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+
 							</div>
 						</div>
 					</div>
-					<!-- line below -->
+                    `
+                    //adding actual topics
+                    if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0){
+                        topics.forEach((e,i) => {
+                            html += /*html*/ `
+                    <!-- line below -->
 					<div style="background-color:transparent;">
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
 							<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:#ffffff"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#ffffff;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
+
 											<table border="0" cellpadding="0" cellspacing="0" class="divider"
 												role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
@@ -459,36 +454,28 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 													</tr>
 												</tbody>
 											</table>
-											<!--[if (!mso)&(!IE)]><!-->
+
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+
 							</div>
 						</div>
 					</div>
-				<!-- end line -->
-            `
-	//adding actual topics
-	if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0) {
-		console.log(topics)
-		topics.forEach(e => {
-			html += /*html*/ `
-					<div style="background-color:transparent;" id="#t0">
+					<!-- end line -->
+					<div style="background-color:transparent;">
 						<div class="block-grid mixed-two-up"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
 							<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:#ffffff"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="266" style="background-color:#ffffff;width:266px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 5px; padding-left: 25px; padding-top:30px; padding-bottom:30px;"><![endif]-->
+
 								<div class="col num5"
 									style="display: table-cell; vertical-align: top; max-width: 320px; min-width: 265px; width: 266px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:30px; padding-bottom:30px; padding-right: 5px; padding-left: 25px;">
-											<!--<![endif]-->
+
 											<table cellpadding="0" cellspacing="0" role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
 												valign="top" width="100%">
@@ -497,48 +484,44 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 														style="word-break: break-word; vertical-align: top; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: center; width: 100%;"
 														valign="top" width="100%">
 														<h2
-															style="color:#393d47;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:34px;font-weight:normal;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;">
+															style="color:#393d47;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:34px;font-weight:normal;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;" id="topic${i}">
 															<strong>${e.topicHeading}</strong><br /></h2>
 													</td>
 												</tr>
 											</table>
-											<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top: 15px; padding-bottom: 15px; font-family: Arial, sans-serif"><![endif]-->
+
 											<div
 												style="color:#393d47;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.5;padding-top:15px;padding-right:0px;padding-bottom:15px;padding-left:0px;">
 												<div class="txtTinyMce-wrapper"
 													style="line-height: 1.5; font-size: 12px; color: #393d47; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 18px;">
-													<p
+													<div
 														style="font-size: 14px; line-height: 1.5; word-break: break-word; text-align: left; mso-line-height-alt: 21px; margin: 0;">
 														${e.topicContent}
-                                                    </p>
+                                                    </div>
 												</div>
 											</div>
-											<!--[if mso]></td></tr></table><![endif]-->
 											`
-											if (e.topicLink !== "") {
+											if (e.topicLink !== ""){
 												html += /*html*/`
-												
+
 												<div align="left" class="button-container"
 													style="padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:0px;">
-													<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px" align="left"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${e.topicLink}" style="height:34.5pt;width:147.75pt;v-text-anchor:middle;" arcsize="9%" strokeweight="1.5pt" strokecolor="#234075" fill="false"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><![endif]--><a
+													<a
 														href="${e.topicLink}"
-														style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #234075; background-color: transparent; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 2px solid #234075; border-right: 2px solid #234075; border-bottom: 2px solid #234075; border-left: 2px solid #234075; padding-top: 5px; padding-bottom: 5px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
+														style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #234075; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 2px solid #234075; border-right: 2px solid #234075; border-bottom: 2px solid #234075; border-left: 2px solid #234075; padding-top: 5px; padding-bottom: 5px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
 														target="_blank"><span
 															style="padding-left:25px;padding-right:25px;font-size:16px;display:inline-block;letter-spacing:undefined;"><span
 																style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>View
 																	More</strong></span></span></a>
-													<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+
 												</div>
 												`
 											}
-										html += /*html*/`
-										<!--[if (!mso)&(!IE)]><!-->
+											html += /*html*/`
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!-- picture to go here -->
 							</div>
 						</div>
 					</div>
@@ -547,15 +530,14 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
 							<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:#ffffff"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#ffffff;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
+
 											<table border="0" cellpadding="0" cellspacing="0" class="divider"
 												role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
@@ -581,36 +563,95 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 													</tr>
 												</tbody>
 											</table>
-											<!--[if (!mso)&(!IE)]><!-->
+
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+
 							</div>
 						</div>
 					</div>
 					<!-- end line -->
 
-                            `
-		})
-
-	}
-	html += /*html*/`
+                            `               
+                        })
+            
+                    }
+                    html += /*html*/`
 					<div style="background-color:transparent;">
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
 							<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:#ffffff"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#ffffff;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:20px; padding-bottom:30px;"><![endif]-->
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:20px; padding-bottom:30px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
+
+											<!--
+											<table cellpadding="0" cellspacing="0" class="social_icons"
+												role="presentation"
+												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+												valign="top" width="100%">
+												<tbody>
+													<tr style="vertical-align: top;" valign="top">
+														<td style="word-break: break-word; vertical-align: top; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;"
+															valign="top">
+															<table align="center" cellpadding="0" cellspacing="0"
+																class="social_table" role="presentation"
+																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-tspace: 0; mso-table-rspace: 0; mso-table-bspace: 0; mso-table-lspace: 0;"
+																valign="top">
+																<tbody>
+																	<tr align="center"
+																		style="vertical-align: top; display: inline-block; text-align: center;"
+																		valign="top">
+																		<td style="word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 10px; padding-left: 10px;"
+																			valign="top"><a
+																				href="https://www.facebook.com/"
+																				target="_blank"><img alt="Facebook"
+																					height="32"
+																					src="${clientURL}facebook2x.png"
+																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
+																					title="facebook" width="32" /></a>
+																		</td>
+																		<td style="word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 10px; padding-left: 10px;"
+																			valign="top"><a
+																				href="https://www.twitter.com/"
+																				target="_blank"><img alt="Twitter"
+																					height="32"
+																					src="${clientURL}twitter2x.png"
+																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
+																					title="twitter" width="32" /></a>
+																		</td>
+																		<td style="word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 10px; padding-left: 10px;"
+																			valign="top"><a
+																				href="https://www.linkedin.com/"
+																				target="_blank"><img alt="Linkedin"
+																					height="32"
+																					src="${clientURL}linkedin2x.png"
+																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
+																					title="linkedin" width="32" /></a>
+																		</td>
+																		<td style="word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 10px; padding-left: 10px;"
+																			valign="top"><a
+																				href="https://www.instagram.com/"
+																				target="_blank"><img alt="Instagram"
+																					height="32"
+																					src="${clientURL}instagram2x.png"
+																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
+																					title="instagram" width="32" /></a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											-->
 											<table border="0" cellpadding="0" cellspacing="0" class="divider"
 												role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
@@ -637,71 +678,35 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 													</tr>
 												</tbody>
 											</table>
-											<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Arial, sans-serif"><![endif]-->
 											<div
 												style="color:#888888;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;">
 												<div class="txtTinyMce-wrapper"
 													style="line-height: 1.2; font-size: 12px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; color: #888888; mso-line-height-alt: 14px;">
 													<p
 														style="font-size: 12px; line-height: 1.2; word-break: break-word; text-align: center; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14px; margin: 0;">
-														SDPR - Employment and Labour Market Services Division</span>
+															style="font-size: 12px;">Ministry of Social Development and Poverty Reduction</span>
 													</p>
 												</div>
 											</div>
-											<!--[if mso]></td></tr></table><![endif]-->
-											<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Arial, sans-serif"><![endif]-->
+
 											<div
 												style="color:#888888;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;">
 												<div class="txtTinyMce-wrapper"
 													style="line-height: 1.2; font-size: 12px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; color: #888888; mso-line-height-alt: 14px;">
 													<p
 														style="font-size: 12px; line-height: 1.2; word-break: break-word; text-align: center; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14px; margin: 0;">
-															This email is sent from an unmonitored account. Contact: <a
+														
+															style="font-size: 12px;">This email is sent from an unmonitored account. Contact: <a
 																href="mailto:someone@gov.bc.ca" rel="noopener"
 																style="text-decoration: underline; color: #888888;"
 																target="_blank">someone@gov.bc.ca</a>.</span>
 													</p>
 												</div>
 											</div>
-											<table cellpadding="0" cellspacing="0" class="social_icons"
-											role="presentation"
-											style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-											valign="top" width="100%">
-												<tbody>
-													<tr style="vertical-align: top;" valign="top">
-														<td style="word-break: break-word; vertical-align: top; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;"
-															valign="top">
-															<table align="center" cellpadding="0" cellspacing="0"
-																class="social_table" role="presentation"
-																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-tspace: 0; mso-table-rspace: 0; mso-table-bspace: 0; mso-table-lspace: 0;"
-																valign="top">
-																<tbody>
-																	<tr align="center"
-																		style="vertical-align: top; display: inline-block; text-align: center;"
-																		valign="top">
-																		<td style="word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 10px; padding-left: 10px;"
-																			valign="top"><img alt="Canada Tagline"
-																					height="78"
-																					width="285"
-																					src="${clientURL}canada-bc-tagline.png"
-																					style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;"
-																					title="canada-bc-tagline" /></a>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-											<!--[if mso]></td></tr></table><![endif]-->
-											<!--[if (!mso)&(!IE)]><!-->
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
 							</div>
 						</div>
 					</div>
@@ -710,15 +715,14 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;">
 							<div
 								style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:transparent;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:25px; padding-bottom:25px;"><![endif]-->
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:25px; padding-bottom:25px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
+
 											<table border="0" cellpadding="0" cellspacing="0" class="divider"
 												role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
@@ -745,86 +749,74 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 													</tr>
 												</tbody>
 											</table>
-											<!--[if (!mso)&(!IE)]><!-->
+
 										</div>
-										<!--<![endif]-->
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+
 							</div>
 						</div>
 					</div>
-					<!--
 					<div style="background-color:transparent;">
 						<div class="block-grid"
 							style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;">
 							<div
 								style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-								<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-								<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:transparent;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-								<!--
+
 								<div class="col num12"
 									style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 									<div class="col_cont" style="width:100% !important;">
-										<!--[if (!mso)&(!IE)]><!-->
-										<!--
+
 										<div
 											style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-											<!--<![endif]-->
-											<!--
+											
 											<table cellpadding="0" cellspacing="0" role="presentation"
 												style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
 												valign="top" width="100%">
+												<tbody>
 													<tr style="vertical-align: top;" valign="top">
 														<td align="center"
 															style="word-break: break-word; vertical-align: top; padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; text-align: center;"
 															valign="top">
-															<!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-															<!--[if !vml]><!-->
-															<!--
+
 															<table cellpadding="0" cellspacing="0" class="icons-inner"
 																role="presentation"
 																style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;"
 																valign="top">
-																<!--<![endif]-->
-																<!--
+
+																<tbody>
 																	<tr style="vertical-align: top;" valign="top">
 																		<td align="center"
 																			style="word-break: break-word; vertical-align: top; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 6px;"
-																			valign="top">
-																				<img src="${clientURL}canada-bc-tagline.png" height="64"style="border:0;"
-																					width="null" />
+																			valign="top"><img src="${clientURL}canada-bc-tagline.png" width="400px" />
 																		</td>
 																	</tr>
+																</tbody>
 															</table>
 														</td>
 													</tr>
+												</tbody>
 											</table>
-											<!--[if (!mso)&(!IE)]><!-->
-											<!--
+
 										</div>
-										<!--<![endif]-->
-										<!--
+
 									</div>
 								</div>
-								<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-								<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-								<!--
+
 							</div>
 						</div>
 					</div>
-					-->
-					<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+
 				</td>
 			</tr>
 		</tbody>
 	</table>
-	<!--[if (IE)]></div><![endif]-->
+
 </body>
 
 </html>
     
     `
-	return html
+return html
 }
