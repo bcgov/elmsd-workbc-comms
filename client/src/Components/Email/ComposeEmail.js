@@ -54,7 +54,7 @@ function ComposeEmail() {
             })
             console.log(eT)
             console.log(values)
-            fetch("http://localhost:8000/api/preview", {
+            fetch(FORM_URL.previewForm, {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -116,7 +116,7 @@ function ComposeEmail() {
                                 }
                                 else {
                                     setSubmitting(false)
-                                    //history.push('/successEmail', values)
+                                    history.push('/successEmail', values)
                                 }
                             }
                         )
