@@ -86,6 +86,12 @@ function ComposeEmail() {
                 <Formik
                     initialValues={initialValues}
                     onSubmit={(values, { resetForm, setErrors, setStatus, setSubmitting }) => {
+                        let vC = JSON.parse(JSON.stringify(values))
+                        console.log(vC)
+                        let eT = vC.emailTopics
+                        eT.forEach((e, i) => {
+                            e.topicContent = stateToHTML(values.emailTopics[i].topicContent.getCurrentContent())
+                        })
                         /*
                         let eT = values.emailTopics
                         eT.forEach(e => {
@@ -105,7 +111,7 @@ function ComposeEmail() {
                                 'Accept': 'application/json',
                                 'Content-Type': 'application/json',
                             },
-                            body: JSON.stringify(values),
+                            body: JSON.stringify(vC),
                         })
                         .then(res => res.json())
                         .then(
