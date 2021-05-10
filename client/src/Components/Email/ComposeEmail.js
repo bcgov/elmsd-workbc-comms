@@ -92,18 +92,6 @@ function ComposeEmail() {
                         eT.forEach((e, i) => {
                             e.topicContent = stateToHTML(values.emailTopics[i].topicContent.getCurrentContent())
                         })
-                        /*
-                        let eT = values.emailTopics
-                        eT.forEach(e => {
-                            e.topicContent = stateToHTML(e.topicContent.getCurrentContent())
-                        })
-                        console.log(eT)
-                        console.log(values.emailTopics)
-                        */
-                        //console.log(stateToHTML(values.emailTopics[0].topicContent.getCurrentContent()))
-                        setSubmitting(false)
-                        //console.log(JSON.stringify(values))
-                        
                         fetch(FORM_URL.mainForm, {
                             method: "POST",
                             credentials: 'include',
