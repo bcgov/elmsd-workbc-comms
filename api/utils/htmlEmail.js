@@ -566,6 +566,7 @@ module.exports = function (title, topics, aboveTOC, belowTOC) {
 										</div>
 									</div>
 									<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+									<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
 									`
 									}
 							html += /*html*/`
