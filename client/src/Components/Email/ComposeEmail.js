@@ -35,7 +35,7 @@ const initialValues = {
 
 
 function ComposeEmail() {
-    const history = useHistory()
+    const h = useHistory()
     const [show, setShow] = useState(false);
     const [fetchPreview, setFetchPreview] = useState(false);
     const handleClose = () => setShow(false);
@@ -110,7 +110,7 @@ function ComposeEmail() {
                                 }
                                 else {
                                     setSubmitting(false)
-                                    history.push('/successEmail', values)
+                                    h.push('/successEmail')
                                 }
                             }
                         )
