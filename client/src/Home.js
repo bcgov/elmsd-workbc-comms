@@ -1,6 +1,5 @@
 import React from 'react'
 import { useKeycloak } from '@react-keycloak/web'
-import AuthorizedFunction from './utils/AuthorizedFunction'
 
 function Home() {
     const { keycloak, initialized } = useKeycloak()

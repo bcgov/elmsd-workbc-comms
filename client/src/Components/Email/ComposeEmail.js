@@ -3,7 +3,6 @@ import { withRouter, useHistory } from 'react-router-dom'
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik'
 import { FORM_URL } from '../../constants/form'
 import { EmailValidationSchema } from './EmailValidationSchema'
-import { useKeycloak } from '@react-keycloak/web'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { EditorState } from 'draft-js';
@@ -110,7 +109,7 @@ function ComposeEmail() {
                                 }
                                 else {
                                     setSubmitting(false)
-                                    h.push('/successEmail')
+                                    //h.push('/successEmail')
                                 }
                             }
                         )

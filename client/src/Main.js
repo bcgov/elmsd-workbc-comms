@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import Home from './Home'
 import ComposeEmail from './Components/Email/ComposeEmail'
 import PrivateRoute from './routes/PrivateRoute'

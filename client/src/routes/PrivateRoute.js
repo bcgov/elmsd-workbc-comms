@@ -1,11 +1,10 @@
 import { useKeycloak } from '@react-keycloak/web';
 import React from 'react';
-import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
-import { RouteProps } from 'react-router-dom'
+import { Route} from 'react-router-dom';
 
 
 function PrivateRoute({roles, ...rest }) {
-    const {keycloak, initialized} = useKeycloak();
+    const {keycloak} = useKeycloak();
 
     const isAuthorized = () => {
         if (keycloak && roles) {

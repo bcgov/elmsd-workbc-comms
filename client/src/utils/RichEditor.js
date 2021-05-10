@@ -28,7 +28,7 @@ export class RichEditor extends React.Component {
   };
   toggleInlineStyle = inlineStyle => {
     console.log(inlineStyle)
-    if (inlineStyle == "add-link"){
+    if (inlineStyle === "add-link"){
         const editorState = this.props.editorState;
         const selection = editorState.getSelection();
         const link = window.prompt("Paste the link -");
