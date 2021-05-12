@@ -109,7 +109,7 @@ function ComposeEmail() {
                                 }
                                 else {
                                     setSubmitting(false)
-                                    //h.push('/successEmail')
+                                    h.push('/successEmail')
                                 }
                             }
                         )
