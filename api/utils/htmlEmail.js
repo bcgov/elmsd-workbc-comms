@@ -381,11 +381,11 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 											<div class="txtTinyMce-wrapper"
 												style="line-height: 1.5; font-size: 12px; color: #393d47; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 18px;">
 												<p
-													style="font-size: 16px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
-													<span style="font-size: 16px;">${aboveTOC}</span>
+													style="font-size: 12px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
+													${aboveTOC}
 												</p>
 												<ul
-													style="font-size: 16px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 5px;">
+													style="font-size: 12px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 5px;">
 													`
 													if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0) {
 														topics.forEach((e,i) => {
@@ -396,8 +396,8 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 												html2 += /*html*/`
 												</ul>
 												<p
-													style="font-size: 16px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
-													<span style="font-size: 16px;">${belowTOC}</span>
+													style="font-size: 12px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
+													${belowTOC}
 												</p>
 											</div>
 										</div>
@@ -465,9 +465,10 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 				`
 			//adding actual topics
 			if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0) {
-			topics.forEach(e => {
+			topics.forEach((e,i) => {
 			html2 += /*html*/ `
 				<div style="background-color:transparent;">
+					<a id="#t${i}"></a>
 					<div class="block-grid mixed-two-up"
 						style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
 						<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
@@ -488,7 +489,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 													style="word-break: break-word; vertical-align: top; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: center; width: 100%;"
 													valign="top" width="100%">
 													<h2
-														style="color:#393d47;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:34px;font-weight:normal;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;">
+														style="color:#234075;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:24px;font-weight:normal;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;">
 														<strong>${e.topicHeading}</strong><br />
 													</h2>
 												</td>
@@ -516,7 +517,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 												style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #234075; background-color: transparent; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 2px solid #234075; border-right: 2px solid #234075; border-bottom: 2px solid #234075; border-left: 2px solid #234075; padding-top: 5px; padding-bottom: 5px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
 												target="_blank"><span
 													style="padding-left:25px;padding-right:25px;font-size:16px;display:inline-block;letter-spacing:undefined;"><span
-														style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>View
+														style="font-size: 14px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>View
 															More</strong></span></span></a>
 											<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
 										</div>
@@ -666,6 +667,33 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 										</table>
 										<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Arial, sans-serif"><![endif]-->
 										<div
+										style="color:#888888;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;">
+										<div class="txtTinyMce-wrapper"
+											style="line-height: 1.2; font-size: 12px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; color: black; mso-line-height-alt: 14px;">
+											<p
+												style="font-size: 12px; line-height: 1.2; word-break: break-word; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14px; margin: 0;">
+												<b>WorkBC Employment Services</b><br/>
+												Employment and Labour Market Services Division<br/>
+												Ministry of Social Development and Poverty Reduction<br/></span>
+											</p>
+										</div>
+										</div>
+										<!--[if mso]></td></tr></table><![endif]-->
+										<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Arial, sans-serif"><![endif]-->
+										<div
+										style="color:#888888;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;">
+										<div class="txtTinyMce-wrapper"
+											style="line-height: 1.2; font-size: 12px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; color: black; mso-line-height-alt: 14px;">
+											<p
+												style="font-size: 12px; line-height: 1.2; word-break: break-word; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14px; margin: 0;">
+												*Note: These updates are only sent to the Account Manager and secondary contact identified to the ministry.<br/>
+												Employment and Labour Market Services Division<br/><br/></span>
+											</p>
+										</div>
+										</div>
+										<!--[if mso]></td></tr></table><![endif]-->
+										<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Arial, sans-serif"><![endif]-->
+										<div
 											style="color:#888888;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;">
 											<div class="txtTinyMce-wrapper"
 												style="line-height: 1.2; font-size: 12px; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; color: #888888; mso-line-height-alt: 14px;">
@@ -684,9 +712,9 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 												<p
 													style="font-size: 12px; line-height: 1.2; word-break: break-word; text-align: center; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14px; margin: 0;">
 													This email is sent from an unmonitored account. Contact: <a
-														href="mailto:someone@gov.bc.ca" rel="noopener"
+														href="mailto:elms.stakeholders@gov.bc.ca" rel="noopener"
 														style="text-decoration: underline; color: #888888;"
-														target="_blank">someone@gov.bc.ca</a>.</span>
+														target="_blank">elms.stakeholders@gov.bc.ca</a>.</span>
 												</p>
 											</div>
 										</div>

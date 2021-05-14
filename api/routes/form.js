@@ -28,7 +28,7 @@ async function sendEmails(values) {
         console.log("Transporter connected.")
         // send mail with defined transport object
         let message1 = {
-          from: 'WorkBC ES Comms <donotreply@gov.bc.ca>', // sender address
+          from: 'SDPR ELMSD Stakeholders <donotreply@gov.bc.ca>', // sender address
           to: values.emailTo,// list of receivers
           cc: values.emailCC,
           bcc: values.emailBCC,
