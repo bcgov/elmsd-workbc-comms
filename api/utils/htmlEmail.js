@@ -262,9 +262,9 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 					<div class="block-grid"
 						style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;">
 						<div
-							style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;background-image:url('${clientURL}bg.jpeg');background-position:top left;background-repeat:no-repeat; background-size: cover">
+							style="border-collapse: collapse;display: table;width: 100%;background-color:#5bc2e7;background-image:url('${clientURL}bg.jpeg');background-position:top left;background-repeat:no-repeat; background-size: cover">
 							<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-							<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:red;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><img width="640" src="${clientURL}bg.jpeg" /><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
+							<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#5bc2e7;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><img width="640" src="${clientURL}bg.jpeg" /><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
 							<div class="col num12"
 								style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 								<div class="col_cont" style="width:100% !important;">
