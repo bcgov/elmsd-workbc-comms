@@ -264,14 +264,15 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 						<div
 							style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;background-image:url('${clientURL}bg.jpeg');background-position:top left;background-repeat:no-repeat; background-size: cover">
 							<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:640px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-							<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:#5bc2e7;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
+							<!--[if (mso)|(IE)]><td align="center" width="640" style="background-color:red;width:640px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><img width="640" src="${clientURL}bg.jpeg" /><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
 							<div class="col num12"
 								style="min-width: 320px; max-width: 640px; display: table-cell; vertical-align: top; width: 640px;">
 								<div class="col_cont" style="width:100% !important;">
 									<!--[if (!mso)&(!IE)]><!-->
 									<div
-										style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
+										style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px; min-height: 400px">
 										<!--<![endif]-->
+										<!--
 										<table border="0" cellpadding="0" cellspacing="0" class="divider"
 											role="presentation"
 											style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
@@ -297,21 +298,20 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 													</td>
 												</tr>
 											</tbody>
-										</table>
+										</table>-->
+										<!--
 										<div align="center" class="button-container"
 											style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-											<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:61.5pt;width:457.5pt;v-text-anchor:middle;" arcsize="5%" stroke="false" fillcolor="#234075"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#F2F2F2; font-family:Georgia, serif; font-size:46px"><![endif]-->
 											<div
 												style="text-decoration:none;display:inline-block;color:#F2F2F2;background-color:#234075;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;width:auto; width:auto;;border-top:1px solid #234075;border-right:1px solid #234075;border-bottom:1px solid #234075;border-left:1px solid #234075;padding-top:0px;padding-bottom:0px;font-family:'Playfair Display', Georgia, serif;text-align:center;mso-border-alt:none;word-break:keep-all;">
 												<span
 													style="padding-left:30px;padding-right:30px;font-size:46px;display:inline-block;letter-spacing:2px;"><span
 														style="font-size: 16px; line-height: 1.8; word-break: break-word; font-family: 'Playfair Display', Georgia, serif; mso-line-height-alt: 29px;"><strong><span
 																data-mce-style="font-size: 46px; line-height: 82px;"
-																style="font-size: 46px; line-height: 82px;"><span style="color:#ffffff; font-family: adobe-garamond-pro; font-weight: 400;font-style: normal;">Work</span><span style="color: #fdb915; font-family: adobe-garamond-pro; font-weight: 400;font-style: normal;">BC</span>
-																This Week</span></strong></span></span>
+																style="font-size: 46px; line-height: 82px;"></span>
 											</div>
-											<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
-										</div>
+										</div>-->
+										<!--
 										<table cellpadding="0" cellspacing="0" role="presentation"
 											style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
 											valign="top" width="100%">
@@ -321,7 +321,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 													valign="top" width="100%">
 													<h2
 														style="color:#ffffff;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:34px;font-weight:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
-														<strong>${title}</strong><br />
+														<br />
 													</h2>
 												</td>
 											</tr>
@@ -352,6 +352,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 												</tr>
 											</tbody>
 										</table>
+										-->
 										<!--[if (!mso)&(!IE)]><!-->
 									</div>
 									<!--<![endif]-->
