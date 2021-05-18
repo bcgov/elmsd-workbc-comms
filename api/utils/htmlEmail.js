@@ -35,6 +35,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 <link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet" type="text/css" />
 <link href="https://use.typekit.net/xif0nlk.css" rel="stylesheet">
 <!--<![endif]-->
+<base href="" />
 <style type="text/css">
 	body {
 		margin: 0;
@@ -469,7 +470,6 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 			topics.forEach((e,i) => {
 			html2 += /*html*/ `
 				<div style="background-color:transparent;">
-					<a id="t${i}"></a>
 					<div class="block-grid mixed-two-up"
 						style="min-width: 320px; max-width: 640px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;">
 						<div style="border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;">
@@ -489,6 +489,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 												<td align="center"
 													style="word-break: break-word; vertical-align: top; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: center; width: 100%;"
 													valign="top" width="100%">
+													<a name="t${i}"></a>
 													<h2
 														style="color:#234075;direction:ltr;font-family:'Playfair Display', Georgia, serif;font-size:24px;font-weight:normal;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;">
 														<strong>${e.topicHeading}</strong><br />
@@ -501,10 +502,10 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 											style="color:#393d47;font-family:Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.5;padding-top:15px;padding-right:0px;padding-bottom:15px;padding-left:0px;">
 											<div class="txtTinyMce-wrapper"
 												style="line-height: 1.5; font-size: 12px; color: #393d47; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 18px;">
-												<p
-													style="font-size: 14px; line-height: 1.5; word-break: break-word; text-align: left; mso-line-height-alt: 21px; margin: 0;">
+												<div
+													style="font-size: 14px; line-height: 1.5; word-break: break-word; text-align: left; mso-line-height-alt: 21px; margin: 0; max-width: 640px">
 													${e.topicContent}
-												</p>
+												</div>
 											</div>
 										</div>
 										`
