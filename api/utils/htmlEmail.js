@@ -382,11 +382,11 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 											<div class="txtTinyMce-wrapper"
 												style="line-height: 1.5; font-size: 12px; color: #393d47; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 18px;">
 												<p
-													style="font-size: 12px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
+													style="font-size: 12px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 0;">
 													${aboveTOC}
 												</p>
 												<ul
-													style="font-size: 12px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 5px;">
+													style="font-size: 12px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 15px;">
 													`
 													if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0) {
 														topics.forEach((e,i) => {
@@ -397,7 +397,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 												html2 += /*html*/`
 												</ul>
 												<p
-													style="font-size: 12px; line-height: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin: 0;">
+													style="font-size: 12px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 0;">
 													${belowTOC}
 												</p>
 											</div>
