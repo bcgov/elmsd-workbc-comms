@@ -9,7 +9,7 @@ var csrf = require('csurf');
 var csrfProtection = csrf({ cookie: true });
 
 
-var generateHTMLEmail = require('../utils/htmlEmail')
+var generateHTMLEmail = require('../utils/htmlEmail');
 
 
 async function sendEmails(values) {

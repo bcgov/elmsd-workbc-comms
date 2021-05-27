@@ -9,25 +9,9 @@ import { EditorState } from 'draft-js';
 import {RichEditor} from '../../utils/RichEditor'
 import {stateToHTML} from 'draft-js-export-html'
 import ImageSelector from './ImageSelector'
+import { useKeycloak } from '@react-keycloak/web'
 
-const initialValues = {
-    emailTo: '',
-    emailCC: '',
-    emailBCC: '',
-    emailSubject: '',
-    emailHeading: '',
-    aboveTOC: '',
-    belowTOC: '',
-    emailTopics: [
-        {
-            topicHeading: '',
-            topicContent: EditorState.createEmpty(),
-            topicLink: '',
-            hasImage: false,
-            topicImage: '',
-        }
-    ]
-}
+
 
 
 
@@ -35,14 +19,38 @@ const initialValues = {
 
 function ComposeEmail() {
     const h = useHistory()
+    const { keycloak, initialized } = useKeycloak()
     const [show, setShow] = useState(false);
     const [fetchPreview, setFetchPreview] = useState(false);
     const handleClose = () => setShow(false);
     const [prevEmail, setPrevEmail] = useState({__html: ''})
     const handleShow = () => setShow(true);
+    const [draftSaved, setDraftSaved] = useState(false)
+    const [draftSaving, setDraftSaving] = useState(false)
+    const [draftID, setDraftID] = useState('')
+
+    const initialValues = {
+        _user: keycloak.authenticated ? keycloak.tokenParsed.preferred_username : '',
+        emailTo: '',
+        emailCC: '',
+        emailBCC: '',
+        emailSubject: '',
+        emailHeading: '',
+        aboveTOC: '',
+        belowTOC: '',
+        emailTopics: [
+            {
+                topicHeading: '',
+                topicContent: EditorState.createEmpty(),
+                topicLink: '',
+                hasImage: false,
+                topicImage: '',
+            }
+        ]
+    }
 
     const getHtml = (values) => {
-        console.log(values)
+        console.log("IN GETHTML")
         if (show && !fetchPreview) {
             setFetchPreview(true)
             let vC = JSON.parse(JSON.stringify(values))
@@ -51,8 +59,6 @@ function ComposeEmail() {
             eT.forEach((e, i) => {
                 e.topicContent = stateToHTML(values.emailTopics[i].topicContent.getCurrentContent())
             })
-            console.log(eT)
-            console.log(values)
             fetch(FORM_URL.previewForm, {
                 method: "POST",
                 credentials: "include",
@@ -75,6 +81,81 @@ function ComposeEmail() {
         } else if (!show){
             setFetchPreview(false)
         }
+    }
+
+    const saveDraft = (values) => {
+        setDraftSaving(true)
+        if (!draftSaved){
+            let vC = JSON.parse(JSON.stringify(values))
+            console.log(vC)
+            let eT = vC.emailTopics
+            eT.forEach((e, i) => {
+                e.topicContent = stateToHTML(values.emailTopics[i].topicContent.getCurrentContent())
+            })
+            fetch(FORM_URL.saveDraft, {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(vC),
+            })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    if (result.draftErr){
+
+                    } else if (result.ok){
+                        setDraftSaved(true)
+                        setDraftID(result.id)
+                        h.push('/successDraft')
+                    }
+                },
+                (error) => {
+                    console.log(error)
+                }
+            )
+        }
+        setDraftSaving(false)
+    }
+
+    const updateDraft = (values) => {
+        setDraftSaving(true)
+        /*
+        if (draftSaved && draftID !== ''){
+            let vC = JSON.parse(JSON.stringify(values))
+            console.log(vC)
+            let eT = vC.emailTopics
+            eT.forEach((e, i) => {
+                e.topicContent = stateToHTML(values.emailTopics[i].topicContent.getCurrentContent())
+            })
+            fetch(FORM_URL.saveDraft, {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(vC),
+            })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    if (result.draftErr){
+
+                    } else if (result.ok){
+                        setDraftSaved(true)
+                        setDraftID(result.id)
+                    }
+                },
+                (error) => {
+                    console.log(error)
+                }
+            )
+        }
+        */
+        setDraftSaving(false)
     }
 
     return (
@@ -118,6 +199,7 @@ function ComposeEmail() {
                 >
                     {({ values, isSubmitting, setFieldValue, handleBlur, handleChange }) => (
                         <Form>
+                            {console.log(values)}
                             <FieldArray name="emailTopics">
                                 {({ insert, remove, push, }) => (
                                     <div>
@@ -179,6 +261,7 @@ function ComposeEmail() {
                                             />
                                         </div>
                                         <h2>Template Fields</h2>
+                                        {/*
                                         <div className="form-group row">
                                             <label className="col-form-label control-label col-sm-2" htmlFor="emailHeading">Email Heading:</label>
                                             <Field
@@ -193,6 +276,7 @@ function ComposeEmail() {
                                                 className="field-error"
                                             />
                                         </div>
+                                        */}
                                         <div className="form-group row">
                                             <label className="col-form-label control-label col-sm-2" htmlFor="aboveTOC">Above TOC:</label>
                                             <Field
@@ -323,13 +407,37 @@ function ComposeEmail() {
                                         </button>
                                         <br></br>
                                         <br></br>
+                                        {!draftSaved && 
+                                        <div>
+                                            <Button variant="secondary" onClick={() => {saveDraft(values)}}>
+                                                Save Draft
+                                            </Button>
+                                            {draftSaving &&
+                                                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                            }
+                                            <br></br>
+                                            <br></br>
+                                        </div>
+                                        }
+                                        {(draftSaved && draftID !== '') &&
+                                         <div>
+                                            <Button variant="secondary" onClick={() => {updateDraft(values)}}>
+                                                Update Draft
+                                            </Button>
+                                            {draftSaving &&
+                                                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                            }
+                                            <br></br>
+                                            <br></br>
+                                        </div>                                       
+                                        }
                                         <Button variant="danger" onClick={handleShow}>
                                             Preview
                                         </Button>
                                         <Modal 
                                             show={show} 
                                             onHide={handleClose} 
-                                            onEnter={getHtml(values)}
+                                            onEnter={() => {getHtml(values)}}
                                             size="lg"
                                         >
                                             <Modal.Header closeButton>

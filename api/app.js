@@ -17,6 +17,8 @@ const corsOptions = {
 
 var formRouter = require('./routes/form')
 var previewRouter = require('./routes/preview')
+var saveDraftRouter = require('./routes/saveDraft')
+var updateDraftRouter = require('./routes/updateDraft')
 
 
 var app = express();
@@ -31,5 +33,7 @@ app.use(helmet());
 
 app.use('/api/form', formRouter)
 app.use('/api/preview',previewRouter)
+app.use('/api/saveDraft', saveDraftRouter)
+app.use('/api/saveDraft', updateDraftRouter)
 
 module.exports = app;
