@@ -75,6 +75,18 @@ objects:
         location /api/form {
             proxy_pass ${API_URL};
         }
+        location /api/preview {
+          proxy_pass ${API_URL};
+        }
+        location /api/form/saveDraft {
+          proxy_pass ${API_URL};
+        }
+        location /api/getDrafts {
+          proxy_pass ${API_URL};
+        }
+        location /api/getSent {
+          proxy_pass ${API_URL};
+        }
         location / {
           try_files $uri /index.html;
 
