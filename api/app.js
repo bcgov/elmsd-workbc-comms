@@ -19,6 +19,8 @@ var formRouter = require('./routes/form')
 var previewRouter = require('./routes/preview')
 var saveDraftRouter = require('./routes/saveDraft')
 var updateDraftRouter = require('./routes/updateDraft')
+var getDraftRouter = require('./routes/getDraft')
+var getSentRouter = require('./routes/getSent')
 
 
 var app = express();
@@ -35,5 +37,7 @@ app.use('/api/form', formRouter)
 app.use('/api/preview',previewRouter)
 app.use('/api/saveDraft', saveDraftRouter)
 app.use('/api/saveDraft', updateDraftRouter)
+app.use('/api/getDrafts', getDraftRouter)
+app.use('/api/getSent', getSentRouter)
 
 module.exports = app;

@@ -5,48 +5,79 @@ import { FORM_URL } from '../../constants/form'
 import { EmailValidationSchema } from './EmailValidationSchema'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import { EditorState } from 'draft-js';
+import { ContentState, convertFromHTML, EditorState } from 'draft-js';
 import {RichEditor} from '../../utils/RichEditor'
 import {stateToHTML} from 'draft-js-export-html'
 import ImageSelector from './ImageSelector'
 import { useKeycloak } from '@react-keycloak/web'
-
-
-
-
-
-
+import htmlToDraft from 'html-to-draftjs';
 
 function ComposeEmail() {
     const h = useHistory()
     const { keycloak, initialized } = useKeycloak()
     const [show, setShow] = useState(false);
     const [fetchPreview, setFetchPreview] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        setFetchPreview(false);
+    }
     const [prevEmail, setPrevEmail] = useState({__html: ''})
     const handleShow = () => setShow(true);
     const [draftSaved, setDraftSaved] = useState(false)
     const [draftSaving, setDraftSaving] = useState(false)
     const [draftID, setDraftID] = useState('')
 
-    const initialValues = {
-        _user: keycloak.authenticated ? keycloak.tokenParsed.preferred_username : '',
-        emailTo: '',
-        emailCC: '',
-        emailBCC: '',
-        emailSubject: '',
-        emailHeading: '',
-        aboveTOC: '',
-        belowTOC: '',
-        emailTopics: [
-            {
-                topicHeading: '',
-                topicContent: EditorState.createEmpty(),
-                topicLink: '',
-                hasImage: false,
-                topicImage: '',
-            }
-        ]
+    let initialValues = {}
+
+    if (h.location.state !== undefined && h.location.state.emailTopics){
+        let eT = []
+        h.location.state.emailTopics.forEach((e,i) => {
+            console.log(e)
+            let blocksFromHTML = convertFromHTML(e.topicContent)
+            let eState = ContentState.createFromBlockArray(
+                blocksFromHTML.contentBlocks,
+                blocksFromHTML.entityMap
+            )
+            eT.push({
+                topicHeading: e.topicHeading,
+                topicContent: EditorState.createWithContent(eState),
+                topicLink: e.topicLink,
+                hasImage: e.hasImage,
+                topicImage: e.topicImage,                
+            })
+        }) 
+
+        initialValues = {
+            _user: keycloak.authenticated ? keycloak.tokenParsed.preferred_username : '',
+            emailTo: h.location.state.emailTo,
+            emailCC: h.location.state.emailCC,
+            emailBCC: h.location.state.emailBCC,
+            emailSubject: h.location.state.emailSubject,
+            emailHeading: h.location.state.emailHeading,
+            aboveTOC: h.location.state.aboveTOC,
+            belowTOC: h.location.state.belowTOC,
+            emailTopics: eT
+        }        
+    } else {
+        initialValues = {
+            _user: keycloak.authenticated ? keycloak.tokenParsed.preferred_username : '',
+            emailTo: '',
+            emailCC: '',
+            emailBCC: '',
+            emailSubject: '',
+            emailHeading: '',
+            aboveTOC: '',
+            belowTOC: '',
+            emailTopics: [
+                {
+                    topicHeading: '',
+                    topicContent: EditorState.createEmpty(),
+                    topicLink: '',
+                    hasImage: false,
+                    topicImage: '',
+                }
+            ]
+        }
     }
 
     const getHtml = (values) => {
@@ -184,6 +215,7 @@ function ComposeEmail() {
                         .then(res => res.json())
                         .then(
                             (resp) => {
+                                console.log(resp)
                                 if (resp.err) {
                                     setErrors(resp.err)
                                     setSubmitting(false)
@@ -197,12 +229,14 @@ function ComposeEmail() {
                     }}
                     validationSchema={EmailValidationSchema}
                 >
-                    {({ values, isSubmitting, setFieldValue, handleBlur, handleChange }) => (
+                    {({ values, isSubmitting, setFieldValue, handleBlur, handleChange, errors }) => (
                         <Form>
                             {console.log(values)}
+                            {console.log(errors)}
                             <FieldArray name="emailTopics">
                                 {({ insert, remove, push, }) => (
                                     <div>
+                                        {console.log(h)}
                                         <h2>Email Fields</h2>
                                         <div className="form-group row">
                                             <label className="col-form-label control-label col-sm-2" htmlFor="emailTo">To:</label>
@@ -246,6 +280,11 @@ function ComposeEmail() {
                                                 className="field-error"
                                             />
                                         </div>
+                                        { (values.emailTo === "" && values.emailBCC === "") &&
+                                        <div className="form-grouo">
+                                            <p>Please enter at least one of To or BCC</p>
+                                        </div>
+                                        }
                                         <div className="form-group row">
                                             <label className="col-form-label control-label col-sm-2" htmlFor="emailSubject">Subject:</label>
                                             <Field
@@ -419,18 +458,6 @@ function ComposeEmail() {
                                             <br></br>
                                         </div>
                                         }
-                                        {(draftSaved && draftID !== '') &&
-                                         <div>
-                                            <Button variant="secondary" onClick={() => {updateDraft(values)}}>
-                                                Update Draft
-                                            </Button>
-                                            {draftSaving &&
-                                                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            }
-                                            <br></br>
-                                            <br></br>
-                                        </div>                                       
-                                        }
                                         <Button variant="danger" onClick={handleShow}>
                                             Preview
                                         </Button>
@@ -459,7 +486,7 @@ function ComposeEmail() {
                                             className="btn btn-success btn-block"
                                             type="submit"
                                             style={{ marginBottom: "2rem" }}
-                                            disabled={isSubmitting}
+                                            disabled={isSubmitting || (values.emailTo === "" && values.emailBCC === "")}
                                         >
                                             {
                                                 isSubmitting ?

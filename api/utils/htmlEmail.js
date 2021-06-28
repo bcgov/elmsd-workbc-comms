@@ -3,6 +3,7 @@ var {stateToHTML} = require('draft-js-export-html')
 var clientURL = process.env.CLIENTURL || process.env.OPENSHIFT_NODEJS_CLIENTURL || "http://localhost:3000"
 
 module.exports = function (title, topics, aboveTOC, belowTOC) {
+	console.log(topics)
 var html2= /*html*/`<!DOCTYPE html
 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -390,6 +391,9 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 													style="font-size: 12px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin: 15px;">
 													`
 													if (typeof topics != "undefined" && topics != null && topics.length != null && topics.length > 0) {
+														if (topics.length >= 4){
+															html2 += `<a name="jump_top"></a>`
+														}
 														topics.forEach((e,i) => {
 															html2 += /*html*/
 																`<li><a href="#t${i}">${e.topicHeading}</a></li>`
@@ -506,6 +510,17 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 													style="font-size: 14px; line-height: 1.5; word-break: break-word; text-align: left; mso-line-height-alt: 21px; margin: 0; max-width: 640px">
 													${e.topicContent}
 												</div>
+												`
+												if (i >= 3){
+													html2 += /*html*/
+													`
+													<div
+														style="font-size: 14px; line-height: 1.5; word-break: break-word; text-align: left; mso-line-height-alt: 21px; margin: 0; max-width: 640px">
+														<a href="jump_top">Go back up</a>
+													</div>
+													`
+												}
+												`
 											</div>
 										</div>
 										`

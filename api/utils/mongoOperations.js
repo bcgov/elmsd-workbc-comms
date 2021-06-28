@@ -27,6 +27,16 @@ function getClient() {
 
 
 module.exports = {
+    saveSent: async function (items) {
+        return await connection
+        .then(mClient => {
+            // get a handle on the db
+            return mClient.db();
+        }).then(async db => {
+            // add our values to db (they are always new)
+            return db.collection("Sent").insertOne(items)
+        });
+    },
     saveDraft: async function (items) {
         return await connection
         .then(mClient => {
@@ -73,5 +83,37 @@ module.exports = {
             // add our values to db (they are always new)
             return db.collection("Sent").insertOne(items)
         });
+    },
+    getSent: async function () {
+        return await connection
+        .then(mClient => {
+            // get a handle on the db
+            return mClient.db();
+            //return db
+        })
+        .then(async db => {
+        // add our values to db (they are always new)
+            return db.collection("Sent").find()
+                //console.log(err)
+                //console.log(doc)
+        }).then(doc =>{
+            return doc
+        })
+    },
+    getDrafts: async function () {
+        return await connection
+        .then(mClient => {
+            // get a handle on the db
+            return mClient.db();
+            //return db
+        })
+        .then(async db => {
+        // add our values to db (they are always new)
+            return db.collection("Drafts").find()
+                //console.log(err)
+                //console.log(doc)
+        }).then(doc =>{
+            return doc
+        })
     },
 };

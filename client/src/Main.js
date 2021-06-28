@@ -5,6 +5,8 @@ import ComposeEmail from './Components/Email/ComposeEmail'
 import PrivateRoute from './routes/PrivateRoute'
 import SuccessEmail from './Components/Email/SuccessEmail'
 import SuccessDraft from './Components/Email/SuccessDraft'
+import Drafts from './Components/Drafts/Drafts'
+import SentEmails from './Components/Sent/SentEmails'
 
 
 function Main() {
@@ -15,6 +17,8 @@ function Main() {
                     <PrivateRoute component={ComposeEmail} roles={['comms']} path="/sendEmail" />
                     <PrivateRoute component={SuccessEmail} roles={['comms']} path="/successEmail"   />
                     <PrivateRoute component={SuccessDraft} roles={['comms']} path="/successDraft"   />
+                    <PrivateRoute component={Drafts} roles={['comms']} path="/drafts"   />
+                    <PrivateRoute component={SentEmails} roles={['comms']} path="/sentEmails"   />
                     <Route exact path="/" component={Home} />
                 </Switch>
         </main>

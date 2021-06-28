@@ -7,6 +7,7 @@ var { check, validationResult, matchedData } = require('express-validator')
 var nodemailer = require("nodemailer");
 var csrf = require('csurf');
 var csrfProtection = csrf({ cookie: true });
+var { saveSent } = require('../utils/mongoOperations')
 
 
 var generateHTMLEmail = require('../utils/htmlEmail');
@@ -33,7 +34,7 @@ async function sendEmails(values) {
           cc: values.emailCC,
           bcc: values.emailBCC,
           subject: values.emailSubject, // Subject line
-          html: generateHTMLEmail(values.emailHeading, values.emailTopics,values.aboveTOC,values.belowTOC) // html body
+          html: generateHTMLEmail(values.emailHeading, values.emailTopics, values.aboveTOC, values.belowTOC) // html body
         };
         /*
         let message3 = {
@@ -65,25 +66,36 @@ async function sendEmails(values) {
 
 router.post('/', async (req, res) => {
   //clean the body
-  console.log("POST received")
+  console.log("POST received to save send")
   console.log(req.body)
   try {
-    await sendEmails(req.body)
-      .then(function (sent) {
-        if (sent){
-          res.send({
-            ok: "ok"
-          })
-        } else if (!sent) {
-          res.send({
-            emailErr: "emailErr"
-          })
+    var item = req.body
+    await saveSent(item)
+      .then(async r => {
+        console.log(r.result)
+        console.log(r.insertedId)
+        if (r.result.ok === 1) {
+          await sendEmails(req.body)
+            .then(function (sent) {
+              if (sent) {
+                res.send({
+                  ok: "ok"
+                })
+              } else if (!sent) {
+                res.send({
+                  err: "emailErr"
+                })
+              }
+            }).catch(function (e) {
+              console.log(e)
+            })
         }
-      }).catch(function (e) {
-        console.log(e)
       })
   } catch (error) {
     console.log(error)
+    res.send ({
+      err: "dbErr"
+    })
   }
 })
 
