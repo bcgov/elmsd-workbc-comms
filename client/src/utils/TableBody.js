@@ -6,6 +6,7 @@ const TableBody = (props) => {
   const showSpinner = rows === null;
   const {handleShow} = props;
   const {handleContinue} = props;
+  const {handleResend} = props;
   
   function buildRow(row, headers, itemIndex) {
     //console.log(itemIndex)
@@ -21,6 +22,8 @@ const TableBody = (props) => {
               return <td key={itemIndex + "_" + index}><button className="btn btn-secondary" disabled>TBA</button></td>
             } else if (value === "preview"){
               return <td key={itemIndex + "_" + index}><button className="btn btn-secondary" onClick={(e) => handleShow(itemIndex)}>Preview</button></td>
+            } else if (value === "resend"){
+              return <td key={itemIndex + "_" + index}><button className="btn btn-primary" onClick={(e) => handleResend(itemIndex)}>Resend</button></td>
             } else {
              return <td key={itemIndex + "_" + index}>{row[value]}</td>
             }

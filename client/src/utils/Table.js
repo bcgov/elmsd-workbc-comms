@@ -3,7 +3,7 @@ import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 
 const Table = (props) => {
-  const { headers, rows, handleShow, handleContinue } = props;
+  const { headers, rows, handleShow, handleContinue, handleResend } = props;
   return (
     <div>
       <table className="table table-bordered table-hover">
@@ -13,6 +13,7 @@ const Table = (props) => {
         rows={rows} 
         handleShow={handleShow}
         handleContinue={handleContinue}
+        handleResend={handleResend}
       >
       </TableBody>
       </table>
