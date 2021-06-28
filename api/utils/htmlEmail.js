@@ -516,7 +516,7 @@ xmlns:v="urn:schemas-microsoft-com:vml">
 													`
 													<div
 														style="font-size: 14px; line-height: 1.5; word-break: break-word; text-align: left; mso-line-height-alt: 21px; margin: 0; max-width: 640px">
-														<a href="jump_top">Go back up</a>
+														<a href="#jump_top">Go back up</a>
 													</div>
 													`
 												}
